@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+}
+
+.aim {
+    position: absolute;
+}
+
+.line {
+    position: absolute;
+    background-color: white;
+}
+
+.horozontal {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+}
+
+.vertical {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+}
+
+.target {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform : translate(-50%, -50%);
+}
+
+.tag {
+    color:white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-size: 38px;
+    transform : translate(20px, 20px);
+}
