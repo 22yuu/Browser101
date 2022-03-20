@@ -1,34 +1,8 @@
-// const addBtn = document.querySelector('.addBtn');
-// const lists = document.querySelector('.lists>ul');
-// const form = document.querySelector('#form');
-
-// function addTodoFunc() {
-//     const todo = document.querySelector('.input--todo');
-//     const li = document.createElement('li');
-//     const deleteBtn = document.createElement('button');
-//     deleteBtn.setAttribute('class', 'deleteBtn')
-//     deleteBtn.textContent = '삭제';
-
-//     li.textContent = todo.value;
-//     li.appendChild(deleteBtn);
-
-//     deleteBtn.addEventListener('click', () => {
-//         lists.removeChild(li);
-//     })
-    
-//     lists.appendChild(li);
-//     todo.value = '';
-// }
-
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     addTodoFunc();
-// })
-
-
 const items = document.querySelector('.items');
 const input = document.querySelector('.footer__input');
 const addBtn = document.querySelector('.footer__button');
+const form = document.querySelector('.new-form');
+
 
 /*
 * 
@@ -91,15 +65,28 @@ function createItem(text) {
     return itemRow;
 }
 
-addBtn.addEventListener('click', () => {
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
     onAdd();
 })
 
-input.addEventListener('keypress', (event) => {
-    if(event.keyCode === 13) {
-        onAdd();
-    }
-})
+// form 태그를 이용하면 아래의 코드들은 필요 없음.
+// addBtn.addEventListener('click', () => {
+//     onAdd();
+// })
+
+// input.addEventListener('keydown', (event) => {
+
+//     if(event.isComposing) {
+//         // keydown으로 할 때, 한글 입력 시 2번 입력되는 현상을 막아줌 
+//         // keyup을 하거나 입력 요소들을 form 태그 내부에 작성 시 해당 코드 작성할 필요가 없음.
+//         return;
+//     }
+//     if(event.keyCode === 13) {
+//         onAdd();
+//     }
+// })
 
 items.addEventListener('click', event => {
     const id = event.target.dataset.id;
