@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <section>
+        <h1> Hello World!!!</h1>
+        <h3>Get your Dream!</h3>
+    </section>
+
+    <script>
+        const section = document.querySelector('section');
+        const h2 = document.createElement('h2');
+        h2.setAttribute('class', 'title'); // <h2 class="title"></h2>
+        h2.textContent = 'This is a title'; // <h2 class="title">This is a title </h2>
+        const h3 = document.querySelector('h3');
+        // section.appendChild(h2); // 마지막 요소 밑에 추가됨
+        section.insertBefore(h2, h3); // h3 태그 위에 추가
+        // section.removeChild(h2) // 요소 삭제
+        
+        // 아래처럼 innerHTML를 사용해서 요소를 구성할 수 있음
+        // section.innerHTML = `
+        //     <h1> Hello World!!!</h1>
+        //     <h3>Get your Dream!</h3>
+        // `
+
+        /*
+            innerHTML vs element
+
+            하지만 innerHTML의 경우 새로 추가된 요소가 있으면, DOM Tree를 구성하고 다시 Render Tree를 만드는 등 번잡한 일들이 일어나 성능에 좋지 않다.
+            
+            만약 요소들이 변동 사항이 자주 발생한다면 위의 번잡한 일들이 계속 일어나므로, createElement, removeEChild 등 자바스크립트로 DOM 요소들을 제어하는 것이
+
+            성능면에서 훨씬 좋다.
+
+            한 번 업데이트한 다음에 다시는 변경할 일이 없다면 innerHTMl을 이용해서 동적으로 추가해도 상관 없다.
+        */
+    </script>
+</body>
+</html>
